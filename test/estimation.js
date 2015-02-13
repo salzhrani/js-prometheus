@@ -7,7 +7,7 @@ var before = lab.before;
 var after = lab.after;
 var expect = Code.expect;
 
-var Estimator = require('../lib/observations-stream');
+var Estimator = require('../lib/estimator');
 
 describe('Estimator', function(){
 
@@ -28,12 +28,12 @@ describe('Estimator', function(){
 		done();
 	});
 
-	// it('observe values', function(done){
-	// 	var estimator = new Estimator();
-	// 	estimator.observe(Math.random());
-	// 	expect(estimator._observations).to.equal(1);
-	// 	done();
-	// });
+	it('observe values', function(done){
+		var estimator = new Estimator();
+		estimator.observe(Math.random());
+		expect(estimator._observations).to.equal(1);
+		done();
+	});
 
 	it('calculates', function(done){
 		var estimator = new Estimator();
@@ -41,8 +41,9 @@ describe('Estimator', function(){
 		estimator.observe(0.4);
 		estimator.observe(0.9);
 		estimator.observe(0.6);
-		expect(estimator.query(0.5)).to.equal(0.6);
-		expect(estimator.query(0.9)).to.equal(0.8);
+
+		expect(estimator.query(0.50)).to.equal(0.6);
+		expect(estimator.query(0.90)).to.equal(0.8);
 		expect(estimator.query(0.99)).to.equal(0.8);
 		done();
 	});
