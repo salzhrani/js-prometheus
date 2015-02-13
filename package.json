@@ -9,6 +9,7 @@
     "int64-native": "^0.3.2",
     "joi": "^5.1.0",
     "memoizee": "^0.3.8",
+    "node-int64": "^0.3.3",
     "through2": "^0.6.3"
   },
   "devDependencies": {
