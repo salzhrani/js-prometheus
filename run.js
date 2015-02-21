@@ -10,9 +10,18 @@ client.connect({});
 
 
 // var metric = new PClient.Metric();
-var counter = new PClient.Counter({
+var counter1 = new PClient.Counter({
 	name: 'Counting'
 });
-client.addMetric(counter);
+client.addMetric(counter1);
 
-counter.inc();
+counter1.inc();
+
+var counter2 = new PClient.Counter({
+	name: 'Counting labels',
+	labels: ['account', 'amount']
+});
+
+client.addMetric(counter2);
+
+counter1.labels('main', 123).inc();
