@@ -24,4 +24,4 @@ var counter2 = new PClient.Counter({
 
 client.addMetric(counter2);
 
-counter1.labels('main', 123).inc();
+counter2.labels(['main', 123]).inc();
