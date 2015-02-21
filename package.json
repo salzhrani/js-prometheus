@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "collections": "^1.2.1",
-    "core-object": "1.0.0",
+    "core-object": "1.1.0",
     "int64-native": "^0.3.2",
     "joi": "^5.1.0",
     "memoizee": "^0.3.8",
